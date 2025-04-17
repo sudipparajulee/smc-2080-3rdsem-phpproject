@@ -2,7 +2,7 @@
     <h2 class="text-3xl">Notices</h2>
     <hr class="mb-4 h-1 bg-red-600">
     <div class="flex mb-4 justify-end">
-        <a href="" class="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md">Add Notice</a>
+        <a href="createnotice.php" class="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md">Add Notice</a>
     </div>
     <table class="w-full">
         <tr class="bg-gray-200">
