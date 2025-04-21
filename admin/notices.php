@@ -1,4 +1,9 @@
-<?php include 'header.php' ?>
+<?php include 'header.php';
+$qry = "SELECT * FROM notices"; 
+include 'dbconnection.php';
+$result = mysqli_query($conn, $qry);
+include 'closeconnection.php';
+?>
     <h2 class="text-3xl">Notices</h2>
     <hr class="mb-4 h-1 bg-red-600">
     <div class="flex mb-4 justify-end">
@@ -10,10 +15,18 @@
             <th class="p-2 border border-gray-300">Notice</th>
             <th class="p-2 border border-gray-300">Action</th>
         </tr>
+        <?php
+        while($row = mysqli_fetch_assoc($result))
+        {
+        ?>
         <tr class="text-center">
-            <td class="p-2 border">1</td>
-            <td class="p-2 border">This is a notice</td>
-            <td class="p-2 border">Edit Delete</td>
+            <td class="p-2 border"><?php echo $row['id']; ?></td>
+            <td class="p-2 border"><?php echo $row['notice'];?></td>
+            <td class="p-2 border">
+                <a href="" class="bg-blue-600 text-white px-2 py-1 rounded-lg mx-1">Edit</a>
+                <a href="" class="bg-red-600 text-white px-2 py-1 rounded-lg mx-1">Delete</a>
+            </td>
         </tr>
+        <?php } ?>
     </table>
 <?php include 'footer.php' ?>
