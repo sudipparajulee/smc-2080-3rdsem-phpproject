@@ -24,7 +24,7 @@ include 'closeconnection.php';
             <td class="p-2 border"><?php echo $row['notice'];?></td>
             <td class="p-2 border">
                 <a href="editnotice.php?id=<?php echo $row['id']; ?>" class="bg-blue-600 text-white px-2 py-1 rounded-lg mx-1">Edit</a>
-                <a href="" class="bg-red-600 text-white px-2 py-1 rounded-lg mx-1">Delete</a>
+                <a href="actionnotice.php?deleteid=<?php echo $row['id']; ?>" class="bg-red-600 text-white px-2 py-1 rounded-lg mx-1">Delete</a>
             </td>
         </tr>
         <?php } ?>

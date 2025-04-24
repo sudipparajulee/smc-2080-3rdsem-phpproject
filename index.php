@@ -1,5 +1,22 @@
-<?php include 'header.php'; ?>
+<?php include 'header.php'; 
+$qrynotice = "SELECT * FROM notices";
+include 'admin/dbconnection.php';
+$resultnotice = mysqli_query($conn,$qrynotice);
+include 'admin/closeconnection.php';
+?>
     <div class="px-20 py-10">
+
+        <div class="flex mb-8 items-center">
+            <p class="bg-red-600 text-white px-10 py-4">Notice</p>
+            <marquee behavior="scroll" direction="left" scrollamount="15" class="bg-gray-100 py-4 font-bold flex-1">
+                <?php while($rownotice = mysqli_fetch_assoc($resultnotice)) { 
+                    echo $rownotice['notice'];
+                    echo " | ";
+                }
+                ?>   
+            </marquee>
+        </div>
+
         <h1 class="text-2xl font-bold border-l-4 pl-2 border-blue-600">Latest News</h1>
 
         <div class="grid grid-cols-4 gap-4 mt-4">
