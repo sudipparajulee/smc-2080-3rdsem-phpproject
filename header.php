@@ -1,3 +1,9 @@
+<?php 
+$qry = "SELECT * FROM categories ORDER BY priority";
+include 'admin/dbconnection.php';
+$resultcat = mysqli_query($conn, $qry);
+include 'admin/closeconnection.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,8 +17,9 @@
         <h2 class="font-bold text-2xl">LOGO</h2>
         <div class="flex gap-4">
             <a href="index.php" class="text-gray-600">Home</a>
-            <a href="" class="text-gray-600">About</a>
-            <a href="" class="text-gray-600">Contact</a>
+            <?php while($rowcat = mysqli_fetch_assoc($resultcat)){ ?>
+            <a href="" class="text-gray-600"><?php echo $rowcat['name'] ?></a>
+            <?php } ?>
             <a href="login.php" class="text-gray-600">Login</a>
         </div>
     </nav>

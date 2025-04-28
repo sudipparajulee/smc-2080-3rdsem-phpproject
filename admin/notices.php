@@ -16,15 +16,16 @@ include 'closeconnection.php';
             <th class="p-2 border border-gray-300">Action</th>
         </tr>
         <?php
+        $i=0;
         while($row = mysqli_fetch_assoc($result))
         {
         ?>
         <tr class="text-center">
-            <td class="p-2 border"><?php echo $row['id']; ?></td>
+            <td class="p-2 border"><?php echo ++$i; ?></td>
             <td class="p-2 border"><?php echo $row['notice'];?></td>
             <td class="p-2 border">
                 <a href="editnotice.php?id=<?php echo $row['id']; ?>" class="bg-blue-600 text-white px-2 py-1 rounded-lg mx-1">Edit</a>
-                <a href="actionnotice.php?deleteid=<?php echo $row['id']; ?>" class="bg-red-600 text-white px-2 py-1 rounded-lg mx-1">Delete</a>
+                <a href="actionnotice.php?deleteid=<?php echo $row['id']; ?>" class="bg-red-600 text-white px-2 py-1 rounded-lg mx-1" onclick="return confirm('Are you sure to delete?')">Delete</a>
             </td>
         </tr>
         <?php } ?>
