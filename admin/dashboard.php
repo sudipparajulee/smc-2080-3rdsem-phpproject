@@ -8,6 +8,7 @@ $rowcat = mysqli_fetch_assoc($resultcat);
 $rownotice = mysqli_fetch_assoc($resultnotice);
 include 'closeconnection.php';
 ?>
+
     <h2 class="text-3xl">Dashboard</h2>
     <hr class="mb-4 h-1 bg-red-600">
     <div class="grid grid-cols-3 gap-5">
