@@ -21,5 +21,11 @@
         </div>
     </footer>
     
+    <script>
+        function hidepopup()
+        {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
